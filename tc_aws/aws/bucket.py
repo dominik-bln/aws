@@ -10,6 +10,7 @@ from tornado_botocore.base import Botocore
 from tornado.concurrent import return_future
 from thumbor.utils import logger
 from thumbor.engines import BaseEngine
+from functools import reduce
 
 
 class Bucket(object):
@@ -17,7 +18,7 @@ class Bucket(object):
 
     @staticmethod
     def __new__(cls, bucket, region, endpoint, *args, **kwargs):
-        key = (bucket, region, endpoint) + args + reduce(lambda x, y: x + y, kwargs.items(), ())
+        key = (bucket, region, endpoint) + args + reduce(lambda x, y: x + y, list(kwargs.items()), ())
 
         if not cls._instances.get(key):
             cls._instances[key] = super(Bucket, cls).__new__(cls)

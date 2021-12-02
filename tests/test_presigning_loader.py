@@ -4,7 +4,7 @@
 # Use of this source code is governed by the MIT license that can be
 # found in the LICENSE file.
 
-from urlparse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs
 
 import botocore.session
 from derpconf.config import Config
@@ -12,7 +12,7 @@ from mock import patch
 from thumbor.context import Context
 from tornado.testing import gen_test
 
-from fixtures.storage_fixture import IMAGE_PATH, IMAGE_BYTES, s3_bucket
+from .fixtures.storage_fixture import IMAGE_PATH, IMAGE_BYTES, s3_bucket
 from tc_aws.loaders import presigning_loader
 from tests import S3MockedAsyncTestCase
 

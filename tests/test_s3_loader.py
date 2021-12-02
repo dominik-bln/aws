@@ -10,7 +10,7 @@ from mock import patch, MagicMock
 from thumbor.context import Context
 from tornado.testing import gen_test
 
-from fixtures.storage_fixture import IMAGE_PATH, IMAGE_BYTES, s3_bucket
+from .fixtures.storage_fixture import IMAGE_PATH, IMAGE_BYTES, s3_bucket
 from tc_aws.loaders import s3_loader
 from tests import S3MockedAsyncTestCase
 

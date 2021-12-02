@@ -15,7 +15,7 @@ from thumbor.config import Config
 from thumbor.context import Context, RequestParameters
 from tornado.testing import gen_test
 
-from fixtures.storage_fixture import IMAGE_URL, IMAGE_BYTES, get_server, s3_bucket
+from .fixtures.storage_fixture import IMAGE_URL, IMAGE_BYTES, get_server, s3_bucket
 from tc_aws.storages.s3_storage import Storage
 from tests import S3MockedAsyncTestCase
 
